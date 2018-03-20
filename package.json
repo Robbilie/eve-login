@@ -1,0 +1,28 @@
+{
+  "name": "evelogin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Robbilie/evelogin.git"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Robbilie/evelogin/issues"
+  },
+  "homepage": "https://github.com/Robbilie/evelogin#readme",
+  "devDependencies": {
+    "jest": "^22.4.2"
+  },
+  "dependencies": {
+    "qs": "^6.5.1",
+    "request": "^2.85.0",
+    "request-promise-native": "^1.0.5",
+    "speakeasy": "^2.0.0"
+  }
+}
