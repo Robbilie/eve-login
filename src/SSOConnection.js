@@ -7,7 +7,7 @@ const { SSO } = require(".");
 
 class SSOConnection {
 
-    constructor (baseUrl = SSO.LIVE_SERVER, args = {}) {
+    constructor (SERVER = "tranquility", args = {}) {
         this.request = rrr.defaults({
             jar: rrr.jar(),
             simple: false,
@@ -16,7 +16,7 @@ class SSOConnection {
             followAllRedirects: true,
             ...args,
         });
-        this.baseUrl = baseUrl;
+        this.baseUrl = SSO[SERVER];
     }
 
     async getLoginToken (args) {

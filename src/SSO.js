@@ -4,20 +4,12 @@ const qs = require("qs");
 
 class SSO {
 
-    static get LIVE_SERVER () {
+    static get tranquility () {
         return "https://login.eveonline.com";
     }
 
-    static get TEST_SERVER1 () {
+    static get singularity () {
         return "https://sisilogin.testeveonline.com";
-    }
-
-    static get TEST_SERVER2 () {
-        throw new Error("NotImplementedException");
-    }
-
-    static get TEST_SERVER3 () {
-        throw new Error("NotImplementedException");
     }
 
     static extractAccessToken (url) {
