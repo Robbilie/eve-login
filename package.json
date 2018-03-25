@@ -1,5 +1,5 @@
 {
-  "name": "evelogin",
+  "name": "eve-login",
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Robbilie/evelogin.git"
+    "url": "git+https://github.com/Robbilie/eve-login.git"
   },
   "author": "",
   "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/Robbilie/evelogin/issues"
+    "url": "https://github.com/Robbilie/eve-login/issues"
   },
-  "homepage": "https://github.com/Robbilie/evelogin#readme",
+  "homepage": "https://github.com/Robbilie/eve-login#readme",
   "devDependencies": {
     "jest": "^22.4.2"
   },
