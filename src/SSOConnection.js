@@ -49,16 +49,27 @@ class SSOConnection {
     }
 
     async handleInitialRequest (UserName, Password) {
+        const __RequestVerificationToken = await this.getRequestVerificationToken();
         const response = await this.request({
             method: "POST",
             uri: SSO.LOGIN_REFERER_URL(this.baseUrl),
             form: {
                 UserName,
                 Password,
+                __RequestVerificationToken,
             }
         });
 
         return [SSO.extractAccessToken(response.request.uri.href), response.body];
+    }
+
+    async getRequestVerificationToken() {
+        const response = await this.request({
+            method: "GET",
+            uri: SSO.LOGIN_REFERER_URL(this.baseUrl),
+        });
+
+        return SSO.getRequestVerificationToken(response.body);
     }
 
     async handleRequiresCharacterName (characterName) {

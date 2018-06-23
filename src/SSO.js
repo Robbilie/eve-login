@@ -30,6 +30,13 @@ class SSO {
         return res.substr(hashStart.index + SSO.EULA_HASH_NEEDLE.length, 32);
     }
 
+    static getRequestVerificationToken (res) {
+        const token = res.match(new RegExp(SSO.REQUEST_VERIFICATION_TOKEN_NEEDLE, "i"));
+        if (!token || token.index === -1)
+            throw new Error("Missing __RequestVerificationToken!");
+        return token[0];
+    }
+
     static requiresAuthenticator (res) {
         return res.match(new RegExp(SSO.AUTHENTICATOR_NEEDLE, "i"));
     }
@@ -90,5 +97,6 @@ SSO.AUTHENTICATOR_NEEDLE = "action=\"/Account/Authenticator";
 SSO.EULA_NEEDLE = "action=\"/oauth/eula\"";
 SSO.EULA_HASH_NEEDLE = "name=\"eulaHash\" type=\"hidden\" value=\"";
 SSO.ACCESS_TOKEN_NEEDLE = "#access_token=";
+SSO.REQUEST_VERIFICATION_TOKEN_NEEDLE = '(?<=name="__RequestVerificationToken" type="hidden" value=")[^"]*';
 
 module.exports = SSO;
